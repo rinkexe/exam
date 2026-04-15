@@ -3,25 +3,6 @@ namespace myImages {
 
     helpers._registerFactory("image", function(name: string) {
         switch(helpers.stringTrim(name)) {
-            case "image2":
-            case "myImage":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`;
             case "image1":
             case "Background1":return img`
 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
@@ -267,6 +248,49 @@ ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+`;
+            case "image2":
+            case "Sprite1":return img`
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffff
 `;
         }
         return null;
