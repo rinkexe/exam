@@ -2,13 +2,27 @@ namespace SpriteKind {
     export const mapCollisions = SpriteKind.create()
     export const mapGroundCollisions = SpriteKind.create()
 }
-let overlapY = 0
-let overlapX = 0
-let halfHeight = 0
-let halfWidth = 0
+function SetupMap1 () {
+    scene.setBackgroundImage(assets.image`Background1`)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(10, 110)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(30, 110)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(50, 110)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(70, 110)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(90, 110)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(110, 110)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(130, 110)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(150, 110)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(150, 93)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(130, 93)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(110, 93)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(90, 93)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(70, 93)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(50, 93)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(30, 93)
+    sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(10, 93)
+}
 let dy = 0
 let dx = 0
-scene.setBackgroundImage(assets.image`Background1`)
 let mySprite = sprites.create(img`
     . . . . . . . . . . b 5 b . . . 
     . . . . . . . . . b 5 b . . . . 
@@ -28,36 +42,27 @@ let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-sprites.create(assets.image`Sprite1`, SpriteKind.mapGroundCollisions).setPosition(20, 100)
 game.onUpdate(function () {
     for (let ground of sprites.allOfKind(SpriteKind.mapGroundCollisions)) {
         if (mySprite.overlapsWith(ground)) {
             dx = mySprite.x - ground.x
             dy = mySprite.y - ground.y
-            halfWidth = (mySprite.width + ground.width) / 2
-            halfHeight = (mySprite.height + ground.height) / 2
-            overlapX = halfWidth - Math.abs(dx)
-            overlapY = halfHeight - Math.abs(dy)
-            // Resolve the smaller overlap first
-            if (overlapX < overlapY) {
-                // LEFT / RIGHT collision
+            if (Math.abs(dx) > Math.abs(dy)) {
+                // LEFT / RIGHT
                 if (dx > 0) {
-                    // Player is on right side → push right
-                    mySprite.x += overlapX
+                    mySprite.left = ground.right
                 } else {
-                    mySprite.x -= overlapX
+                    mySprite.right = ground.left
                 }
                 mySprite.vx = 0
             } else {
-                // TOP / BOTTOM collision
+                // TOP / BOTTOM
                 if (dy > 0) {
-                    // Player below ground → push down
-                    mySprite.y += overlapY
-                    mySprite.vy = 0
+                    mySprite.top = ground.bottom
                 } else {
-                    mySprite.y -= overlapY
-mySprite.vy = 0
+                    mySprite.bottom = ground.top
                 }
+                mySprite.vy = 0
             }
         }
     }
